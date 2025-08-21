@@ -302,6 +302,26 @@ body.light-mode {
   border: none;
 }
 
+
+.mic-btn {
+  margin-left: 8px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  background: #e50914;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.mic-btn:hover {
+  background: #b20710;
+}
+
+
+
+
+
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
@@ -421,4 +441,155 @@ body.light-theme .theme-toggle {
   background-color: #e50914;
   color: white;
   border: none;
+}
+
+
+
+
+
+ .faq {
+      max-width: 800px;
+      margin: 50px auto;
+      color: #fff;
+    }
+
+    .faq h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 2rem;
+    }
+
+    .faq-item {
+      margin-bottom: 10px;
+      background: #303030;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      width: 100%;
+      background: #303030;
+      color: #fff;
+      padding: 15px;
+      font-size: 1.2rem;
+      text-align: left;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 15px;
+      background: #181818;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    /* Animation */
+    .faq-answer.show {
+      display: block;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+
+
+
+
+
+     .reasons {
+      padding: 40px;
+      text-align: center;
+    }
+
+    .reasons h2 {
+      font-size: 28px;
+      margin-bottom: 30px;
+    }
+
+    .reason-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .reason-box {
+      background: linear-gradient(135deg, #1a1a1a, #2c2c54);
+      border-radius: 12px;
+      padding: 20px;
+      width: 220px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .reason-box:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.7);
+    }
+
+    .reason-box h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .reason-box p {
+      font-size: 14px;
+      color: #ccc;
+      margin-bottom: 15px;
+    }
+
+    .icon {
+      font-size: 30px;
+    }
+
+
+
+
+
+
+
+    /* Hero section ko full screen background ke liye */
+.heroo {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* pura viewport height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  transition: background-image 1s ease-in-out; /* smooth transition */
+}
+
+
+
+.heroo {
+  padding: 2rem;
+  text-align: center;
+  animation: fadeIn 1s ease-in;
+
+  height: 70vh; /* hero height */
+  background-size: cover;       /* poora hero cover kare */
+  background-position: center;  /* center me align */
+  background-repeat: no-repeat; /* repeat na ho */
+  transition: background-image 0.5s ease-in-out; /* smooth transition */
+}
+
+@media screen and (max-width: 768px) {
+  .heroo {
+    height: 50vh; /* mobile me chhota hero */
+  }
 }

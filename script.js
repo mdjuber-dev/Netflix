@@ -1,4 +1,3 @@
-// Trailer play on click
 const cards = document.querySelectorAll('.movie-card');
 const overlay = document.getElementById('trailerOverlay');
 const video = document.getElementById('trailerVideo');
@@ -21,7 +20,7 @@ close.addEventListener('click', () => {
   overlay.style.display = 'none';
 });
 
-// Navbar effect on scroll
+
 window.addEventListener('scroll', () => {
   const nav = document.querySelector('.navbar');
   if (window.scrollY > 20) {
@@ -32,7 +31,7 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// Scroll reveal animation
+
 const revealElements = document.querySelectorAll('.movie-card, .section-title');
 
 const revealOnScroll = () => {
@@ -50,7 +49,7 @@ const revealOnScroll = () => {
 window.addEventListener('scroll', revealOnScroll);
 window.addEventListener('load', revealOnScroll);
 
-// Join Now and Signup click actions
+
 const joinBtn = document.querySelector('.join');
 const signBtn = document.querySelector('.sign');
 const joinNow = document.querySelector('.joinn');
@@ -66,7 +65,7 @@ signBtn.addEventListener('click', () => {
   if (name) alert(`Welcome to Netflix, ${name}!`);
 });
 
-// Search filter logic
+
 const searchInput = document.getElementById('searchInput');
 if (searchInput) {
   searchInput.addEventListener('input', () => {
@@ -78,7 +77,7 @@ if (searchInput) {
   });
 }
 
-// Typewriter animation
+
 const typewriter = document.querySelector('.typewriter');
 if (typewriter) {
   const words = typewriter.dataset.words.split(',');
@@ -107,7 +106,7 @@ if (typewriter) {
   type();
 }
 
-// Dark/Light Theme Toggle
+
 const themeBtn = document.createElement('button');
 themeBtn.textContent = "🌗 Theme";
 themeBtn.style.position = 'fixed';
@@ -288,3 +287,99 @@ document.getElementById("startBtn").addEventListener("click", () => {
   }, 5000);
 });
 
+
+
+
+const faqs = document.querySelectorAll(".faq-question");
+
+faqs.forEach((faq) => {
+  faq.addEventListener("click", () => {
+    const answer = faq.nextElementSibling;
+
+    // Toggle open/close
+    if (answer.style.display === "block") {
+      answer.style.display = "none";
+      faq.querySelector("span").textContent = "+";
+    } else {
+      answer.style.display = "block";
+      faq.querySelector("span").textContent = "–";
+    }
+  });
+});
+
+
+
+
+// Voice Search Feature
+const voiceBtn = document.getElementById("voiceSearchBtn");
+
+if ('webkitSpeechRecognition' in window) {
+  const recognition = new webkitSpeechRecognition();
+  recognition.continuous = false;
+  recognition.interimResults = false;
+  recognition.lang = "en-US";
+
+  voiceBtn.addEventListener("click", () => {
+    recognition.start();
+    voiceBtn.textContent = "🎙️ Listening...";
+  });
+
+  recognition.onresult = (event) => {
+    const transcript = event.results[0][0].transcript;
+    searchInput.value = transcript; // fill search box
+    voiceBtn.textContent = "🎤";
+    // Automatically trigger search filter
+    filterMovies(transcript.toLowerCase());
+  };
+
+  recognition.onerror = () => {
+    voiceBtn.textContent = "🎤";
+    alert("Voice recognition error, try again!");
+  };
+} else {
+  voiceBtn.style.display = "none"; // hide if not supported
+}
+
+
+
+// Hero section ke liye image slideshow
+const heroo = document.querySelector('.heroo');
+
+// Aapke 24 images ka array
+const images = [
+  'images/pushpa.jpg',
+  'images/lucky.jpg',
+  'images/dhoom.jpg',
+  'images/daaku.jpg',
+  'images/venom.jpg',
+  'images/spider.jpg',
+  'images/venom1.jpg',
+  'images/flash.jpg',
+  'images/leo.jpg',
+  'images/meg.jpg',
+  'images/sikandar.jpg',
+  'images/mission manju.jpg',
+  'images/goat.jpg',
+  'images/maharaj.jpg',
+  'images/thagalaan.jpg',
+  'images/indian2.jpg',
+  'images/article 370.jpg',
+  'images/guntur.jpg',
+  'images/jodhaa.jpg',
+  'images/thalavii.jpg',
+  'images/mowgli.jpg',
+  'images/goosebumbs.jpg',
+  'images/snow.jpg',
+  'images/lyle.jpg'
+];
+
+let currentIndex = 0;
+
+// Initial background
+heroo.style.backgroundImage = `url(${images[currentIndex]})`;
+
+// Function to change image every 3 seconds
+setInterval(() => {
+  currentIndex = (currentIndex + 1) % images.length; // loop back to 0 after last image
+  heroo.style.backgroundImage = `url(${images[currentIndex]})`;
+}, 3000); // 3000ms = 3 seconds
