@@ -1,0 +1,26 @@
+{
+  "name": "netflix_files",
+  "version": "1.0.0",
+  "description": "A stylish and functional clone of Netflix built with HTML, CSS, and JavaScript. This project replicates the look and feel of Netflix's UI, with working features like theme toggle, trailer playback, search filter, tab-based filtering, and welcome intro video.  🚀 Features ✅ Dark/Light Mode Toggle ✅ Live Trailer Playback on Card Click",
+  "main": "Flixora2.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mdjuber-dev/Netflix.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mdjuber-dev/Netflix/issues"
+  },
+  "homepage": "https://github.com/mdjuber-dev/Netflix#readme",
+  "dependencies": {
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0"
+  }
+}
